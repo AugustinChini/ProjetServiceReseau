@@ -19,7 +19,15 @@ namespace EntitiesLayer
             _nom = "Inconnu";
             _prenom = "Inconnu";
             _sexe = ESexe.Indetermine;
+        }
 
+        public Personne(int inID, String inDateDeNaissance, String inNom, String inPrenom, ESexe inSexe)
+        {
+            _ID = inID;
+            _dateDeNaissance = inDateDeNaissance;
+            _nom = inNom;
+            _prenom = inPrenom;
+            _sexe = inSexe;
         }
 
         public String DateDeNaissance
@@ -44,6 +52,11 @@ namespace EntitiesLayer
         {
             get { return _sexe; }
             set { _sexe = value; }
+        }
+
+        public new String ToString()
+        {
+            return base.ToString() + ", Nom : " + _nom + ", Prenom : " + _prenom + ", Date de naissance : " + _dateDeNaissance + ", Sexe : " + _sexe + ".";
         }
     }
 }

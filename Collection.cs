@@ -12,8 +12,9 @@ namespace EntitiesLayer
         private List<Livre> _livres;
         private String _nom;
 
-        public Collection(String desc, String nom)
+        public Collection(int inID, String desc, String nom)
         {
+            _ID = inID;
             _description = desc;
             _nom = nom;
         }

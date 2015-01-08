@@ -13,12 +13,13 @@ namespace EntitiesLayer
         private Emprunteur _emprunteur;
         private Livre _livre;
 
-        public Emprunt(String dd, String df, Emprunteur emprunteur, Livre l)
+        public Emprunt(int inID, String inDd, String inDf, Emprunteur inEmprunteur, Livre inL)
         {
-            _dateDebut = dd;
-            _dateFin = df;
-            _emprunteur = emprunteur;
-            _livre = l;
+            _ID = inID;
+            _dateDebut = inDd;
+            _dateFin = inDf;
+            _emprunteur = inEmprunteur;
+            _livre = inL;
         }
 
         public String DateDebut
@@ -45,9 +46,9 @@ namespace EntitiesLayer
             set { _livre = value; }
         }
 
-        public String ToString()
+        public new String ToString()
         {
-            return "Le livre "+_livre+" a ete emprunte par "+_emprunteur+" du "+_dateDebut+" au "+_dateFin+".";
+            return base.ToString()+", Le livre {"+_livre.ToString()+"} a ete emprunte par {"+_emprunteur.ToString()+"} du "+_dateDebut+" au "+_dateFin+".";
         }
     }
 }

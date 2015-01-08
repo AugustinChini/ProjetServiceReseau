@@ -19,18 +19,19 @@ namespace EntitiesLayer
 
         public Livre()
         {
-            _auteur = null;
+            _auteur = new Auteur(0,"00/00/0000","Inconnu","Inconnu",ESexe.Indetermine,"00/00/0000",false);
             _dateParution = "00/00/0000";
             _editeur = "Inconnu";
-            _genre = null;
+            _genre = new Genre("Inconnu","Inconnu");
             _ISBN = 0;
             _nombrePages = 0;
             _note = 0;
             _titre = "Inconnu";
         }
 
-        public Livre(Auteur a, String d, String e, Genre g, int i, int nb, int note, String t)
+        public Livre(int inID, Auteur a, String d, String e, Genre g, int i, int nb, int note, String t)
         {
+            _ID = inID;
             _auteur = a;
             _dateParution = d;
             _editeur = e;
@@ -87,6 +88,12 @@ namespace EntitiesLayer
         {
             get { return _titre; }
             set { _titre = value; }
+        }
+
+        public new String ToString()
+        {
+            return base.ToString() + ", Auteur {" + _auteur.ToString() + "}, Date de parution : " + _dateParution + ", Editeur : " + _editeur +
+                ", Genre {" + _genre.ToString() + "}, ISBN : " + _ISBN + ", Nombre de pages : " + _nombrePages + ", Note : " + _note + ", Titre : " + _titre + ".";
         }
     }
 }

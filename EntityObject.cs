@@ -31,7 +31,7 @@ namespace EntitiesLayer
             return (obj1._ID == this._ID);
         }
 
-        public String ToString()
+        public new String ToString()
         {
             return "ID : " + _ID;
         }

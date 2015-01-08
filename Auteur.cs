@@ -11,8 +11,14 @@ namespace EntitiesLayer
         private String _dateMort;
         private bool _prixGoncourt;
 
-        public Auteur(String mort, bool prix)
+        public Auteur(int inID, String inDateDeNaissance, 
+            String inNom, String inPrenom, ESexe inSexe, String mort, bool prix)
         {
+            _ID = inID;
+            _dateDeNaissance = inDateDeNaissance;
+            _nom = inNom;
+            _prenom = inPrenom;
+            _sexe = inSexe;
             _dateMort = mort;
             _prixGoncourt = prix;
         }

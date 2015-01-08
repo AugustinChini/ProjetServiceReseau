@@ -12,8 +12,14 @@ namespace EntitiesLayer
         private String _email;
         private String _telephone;
 
-        public Emprunteur(String ad, String email, String tel)
+        public Emprunteur(int inID, String inDateDeNaissance, 
+            String inNom, String inPrenom, ESexe inSexe, String ad, String email, String tel)
         {
+            _ID = inID;
+            _dateDeNaissance = inDateDeNaissance;
+            _nom = inNom;
+            _prenom = inPrenom;
+            _sexe = inSexe;
             _adresse = ad;
             _email = email;
             _telephone = tel;
@@ -37,9 +43,9 @@ namespace EntitiesLayer
             set { _telephone = value; }
         }
 
-        public String ToString()
+        public new String ToString()
         {
-            return "Nom : "+_nom+", Prenom : "+_prenom+", Date de naissance : "+_dateDeNaissance+", Sexe : "+_sexe+", Adresse : "+_adresse+", Email : "+_email+", Tel : "+_telephone+".";
+            return base.ToString()+", Nom : "+_nom+", Prenom : "+_prenom+", Date de naissance : "+_dateDeNaissance+", Sexe : "+_sexe+", Adresse : "+_adresse+", Email : "+_email+", Tel : "+_telephone+".";
         }
 
     }
