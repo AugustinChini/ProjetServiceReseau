@@ -19,6 +19,22 @@ namespace BusinessLayer
             _date = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        public List<Auteur> 
+        public List<Auteur> getAllAuteurs()
+        {
+            return _dm.getAllAuteurs();
+        }
+
+        public void methodeTest()
+        {
+            var auteursGoncourt =
+                from auteur in _dm.getAllAuteurs()
+                where auteur.PrixGoncourt == true
+                select auteur;
+            foreach (Auteur auteur in auteursGoncourt)
+            {
+                Console.WriteLine(auteur.Nom);
+            }
+        }
+
     }
 }

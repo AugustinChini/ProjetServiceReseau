@@ -16,6 +16,10 @@ namespace StubDataAccessLayer
 
         public DalManager ()
         {
+            booksListe = new List<Livre>();
+            empruntListe = new List<Emprunt>();
+            emprunteurListe = new List<Emprunteur>();
+            auteursListe = new List<Auteur>();
 
             string[] title = new string[10] {
             
@@ -40,7 +44,7 @@ namespace StubDataAccessLayer
             "Lady Doll",
             };
 
-            for(int i = 0; i < 42; ++i)
+            for(int i = 0; i < 10; ++i)
             {
                 Livre newLivre = new Livre();
                 newLivre.Titre = title[i];
@@ -55,9 +59,9 @@ namespace StubDataAccessLayer
             Emprunt emprunt2 = new Emprunt("05/01/2015", "05/02/2015", emprunteur1, booksListe[0]);
             Emprunt emprunt3 = new Emprunt("10/01/2015", "10/02/2015", emprunteur1, booksListe[0]);
 
-            Auteur aut1 = new Auteur("15/05/1935", false);
+            Auteur aut1 = new Auteur("15/05/1935", true);
             Auteur aut2 = new Auteur(null, false);
-            Auteur aut3 = new Auteur("13/05/1937", false);
+            Auteur aut3 = new Auteur("13/05/1937", true);
 
             emprunteurListe.Add(emprunteur1);
             emprunteurListe.Add(emprunteur2);
